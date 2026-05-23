@@ -21,12 +21,12 @@ scroll-behavior:smooth;
 
 body{
 font-family:Poppins,sans-serif;
-background:#050816;
 overflow-x:hidden;
+background:#050816;
 color:white;
 }
 
-/* heavenly bg */
+/* heavenly background */
 
 .sky{
 position:fixed;
@@ -35,55 +35,119 @@ height:100%;
 top:0;
 left:0;
 z-index:-3;
+
 background:
 radial-gradient(circle at top,#4b2a72,#16213e,#050816);
 }
 
 .sky::before{
+
 content:"";
+
 position:absolute;
+
 width:100%;
 height:100%;
 
 background:
-radial-gradient(circle at 20% 30%,rgba(255,100,200,.15),transparent 30%),
-radial-gradient(circle at 80% 20%,rgba(100,150,255,.15),transparent 30%);
+radial-gradient(circle at 20% 30%,
+rgba(255,100,200,.15),
+transparent 30%),
+
+radial-gradient(circle at 80% 20%,
+rgba(100,150,255,.15),
+transparent 30%);
 
 filter:blur(100px);
+
 animation:aurora 10s infinite alternate;
+
 }
 
 @keyframes aurora{
-from{transform:translateX(-50px);}
-to{transform:translateX(50px);}
+
+from{
+transform:translateX(-50px);
 }
 
-/* stars */
+to{
+transform:translateX(50px);
+}
+
+}
+
+/* floating stars */
 
 .stars{
+
 position:fixed;
+
 width:100%;
 height:100%;
+
 overflow:hidden;
+
 z-index:-2;
+
 }
 
 .star{
+
 position:absolute;
+
 background:white;
+
 border-radius:50%;
+
 animation:float linear infinite;
+
 }
 
 @keyframes float{
-from{transform:translateY(100vh);}
-to{transform:translateY(-100px);}
+
+from{
+transform:translateY(100vh);
+}
+
+to{
+transform:translateY(-100px);
+}
+
+}
+
+/* music button */
+
+#musicBtn{
+
+position:fixed;
+
+top:20px;
+right:20px;
+
+z-index:1000;
+
+padding:12px 18px;
+
+border:none;
+
+border-radius:30px;
+
+background:rgba(255,255,255,.15);
+
+backdrop-filter:blur(10px);
+
+color:white;
+
+cursor:pointer;
+
 }
 
 /* hero */
 
 .hero{
+
 height:100vh;
+
 position:relative;
 
 background:
@@ -100,11 +164,13 @@ display:flex;
 align-items:flex-end;
 
 padding:50px;
+
 }
 
 .overlay{
 
 max-width:650px;
+
 animation:fade 2s;
 
 }
@@ -112,6 +178,7 @@ animation:fade 2s;
 .overlay h1{
 
 font-size:4rem;
+
 font-family:'Dancing Script';
 
 margin-bottom:10px;
@@ -122,7 +189,9 @@ text-shadow:
 }
 
 .overlay p{
+
 line-height:2;
+
 }
 
 @keyframes fade{
@@ -139,8 +208,6 @@ transform:translateY(0);
 
 }
 
-/* sections */
-
 section{
 
 padding:80px 20px;
@@ -151,6 +218,7 @@ text-align:center;
 h2{
 
 font-size:3rem;
+
 margin-bottom:40px;
 
 font-family:'Dancing Script';
@@ -210,6 +278,7 @@ line-height:2;
 .message img{
 
 width:300px;
+
 margin-top:20px;
 
 border-radius:20px;
@@ -236,26 +305,12 @@ font-size:18px;
 
 cursor:pointer;
 
-transition:.5s;
-
-}
-
-button:hover{
-
-transform:scale(1.05);
-
-box-shadow:
-0 0 20px pink,
-0 0 50px violet;
-
 }
 
 #finalLetter{
 
 display:none;
 margin-top:30px;
-
-animation:fade 1s;
 
 }
 
@@ -281,6 +336,14 @@ height:auto;
 
 <body>
 
+<audio id="bgMusic" loop>
+<source src="song.mp3" type="audio/mp3">
+</audio>
+
+<button id="musicBtn" onclick="toggleMusic()">
+🎵 Music
+</button>
+
 <div class="sky"></div>
 <div class="stars" id="stars"></div>
 
@@ -305,7 +368,7 @@ Two random people met without knowing what universe was planning.
 
 <section>
 
-<h2>my lekha❤️</h2>
+<h2>My Lekha ❤️</h2>
 
 <div class="gallery">
 
@@ -336,19 +399,19 @@ The message that quietly changed everything ❤️
 
 <section>
 
-<h2>Us so far, till now 🫂✨</h2>
+<h2>Us So Far 🫂✨</h2>
 
-<div class="card">❤️ 24 May 2022 • i met a shy girl on railways station</div>
+<div class="card">❤️ 24 May 2022 • I met a shy girl on railway station</div>
 
- <div class="card">😭 The Anna... but whyyy.. </div> 
+<div class="card">😭 The Anna phase... whyyy</div>
 
-<div class="card">✨ Conversations became memories, some how we got close to eachother.. special..😆</div>
+<div class="card">✨ Conversations became memories somehow we got special</div>
 
-<div class="card">💌 First "I love you", i was one to say.. 😑</div>
+<div class="card">💌 First "I love you"... I said it first 😑</div>
 
 <div class="card">💕 27 Nov 2025 • the day changed everything</div>
 
-<div class="card">❤️ Happy 6 Months ra.. lekhaa</div>
+<div class="card">❤️ Happy 6 Months Lekha</div>
 
 </section>
 
@@ -374,28 +437,22 @@ Read Letter ✨
 
 <div class="letter" id="finalLetter">
 
-howw... lekha.. 
+How Lekha...
 
 No warning.
 
-No signs..
+No signs.
 
-somehow you became mine and i became yours.. 
+Yet somehow you became mine and I became yours ❤️
 
-you became my home ❤️..   my comfort person
+You became my comfort person.
 
-Thank you for these six months..   and years yet to come
+Thank you for staying.
 
-Thank you for staying..  and choosing me..
+Thank you for choosing me.
 
-<br><br>
-
-With all my love,
-
-<br><br>
- 
 Only Yours,
- 
+
 <b>Abraham ❤️</b>
 
 </div>
@@ -404,31 +461,27 @@ Only Yours,
 
 <script>
 
-/* typing */
-
 let text=`Dear Anulekha,
 
 24 May 2022...
 
-We met.. on railway station somehow.. we didnt know.. what universe was holding for us both..
+We met on railway station.
 
-you called me "anna".. most of the time..  😑
+You called me "Anna" 😑
 
-Days passed... months passed
+Days passed.
 
-Conversations became memories...   and us getting special.. to eachother
-
-Memories became feelings..
+Memories became feelings.
 
 Then on 27 November 2025...
 
-you proposed!.. i was nervous the day i thought ..   if i dont i wont get you forever.. but here you are❤️
+you proposed ❤️
 
-Now six months later...  
+Now six months later...
 
-I still choose you.. and will choose only you..
+I still choose you.
 
-I fucking love you more than anything lekha❤️`;
+I fucking love you more than anything Lekha ❤️`;
 
 let i=0;
 
@@ -451,6 +504,31 @@ type();
 function showLetter(){
 
 document.getElementById("finalLetter").style.display="block";
+
+}
+
+/* music */
+
+document.addEventListener("click",()=>{
+
+document.getElementById("bgMusic").play();
+
+},{once:true});
+
+function toggleMusic(){
+
+let music=document.getElementById("bgMusic");
+
+if(music.paused){
+
+music.play();
+
+}
+else{
+
+music.pause();
+
+}
 
 }
 
