@@ -336,8 +336,8 @@ height:auto;
 
 <body>
 
-<audio id="bgMusic" loop>
-<source src="song.mp3" type="audio/mp3">
+<audio id="bgMusic" autoplay loop preload="auto">
+    <source src="song.mp3" type="audio/mpeg">
 </audio>
 
 <button id="musicBtn" onclick="toggleMusic()">
@@ -508,12 +508,31 @@ document.getElementById("finalLetter").style.display="block";
 }
 
 /* music */
+/* AUTO PLAY MUSIC */
 
-document.addEventListener("click",()=>{
+const music = document.getElementById("bgMusic");
 
-document.getElementById("bgMusic").play();
+window.addEventListener("load",()=>{
 
-},{once:true});
+music.volume=0.5;
+
+music.play().catch(()=>{
+
+document.addEventListener(
+"click",
+()=>music.play(),
+{once:true}
+);
+
+document.addEventListener(
+"touchstart",
+()=>music.play(),
+{once:true}
+);
+
+});
+
+});
 
 function toggleMusic(){
 
